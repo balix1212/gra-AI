@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Manager Game</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-section {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #4caf50; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button.selected {
+    background-color: yellow;
+}
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+
+<!-- Część 1: "Początek Sezonu" -->
+<div id="part1" class="game-section">
+    <p>Jesteś nowym trenerem FC Barcelony, stojąc przed wyzwaniem wygrania Ligi Mistrzów w pierwszym sezonie. Twój przyjaciel, asystent trenera, sugeruje skoncentrowanie się na młodych talentach lub doświadczonych zawodnikach. Co wybierasz?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz1.png.png" alt="cz1.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Zainwestujesz w młode talenty, organizując intensywne treningi dla akademii.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Postawisz na doświadczonych piłkarzy, starając się pozyskać gwiazdy światowego futbolu.</button>
+</div>
+
+<!-- Część 2: "Rywalizacja na Treningach" -->
+<div id="part2A" class="game-section">
+    <p>Twój wybór wpływa na atmosferę na treningach. Młodzi zawodnicy są pełni zapału, ale doświadczeni gracze zaczynają przejawiać niechęć do młodej kadry. Jak reagujesz?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz2.png.png" alt="cz2.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Próbujesz zjednać doświadczonych zawodników, organizując wspólne wydarzenia integracyjne.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Ignorujesz napięcia, skupiając się na rozwijaniu młodych talentów.</button>
+</div>
+
+<!-- Część 3: "Pierwsze Mecze Sezonu" -->
+<div id="part3A" class="game-section">
+    <p>Twój zespół zaczyna sezon z mieszanymi wynikami. Masz przed sobą ważny wybór dotyczący taktyki na kolejne mecze.</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz3.png.png" alt="cz3.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Kontynuujesz agresywną taktykę, licząc na szybkie zwycięstwa.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Zmieniasz taktykę, skupiając się na solidnej obronie i kontrolowanym ataku.</button>
+</div>
+
+<!-- Część 4: "Skomplikowane Relacje w Zespole" -->
+<div id="part4A" class="game-section">
+    <p>W związku z wyborem taktyki, różnice poglądów między młodymi graczami a weteranami narastają. Jak radzisz sobie z tą sytuacją?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz4.png.png" alt="cz4.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Organizujesz spotkanie drużyny, aby otwarcie rozmawiać o oczekiwaniach i celach.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Delegujesz asystenta do rozwiązania konfliktów wewnątrz zespołu.</button>
+</div>
+
+<!-- Część 5: "Transferowe Okno" -->
+<div id="part5A" class="game-section">
+    <p>Przyszło okno transferowe, a media donoszą o zainteresowaniu twoimi zawodnikami. Masz dwie opcje:</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz5.png.png" alt="cz5.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Odrzucasz oferty, dbając o stabilność zespołu.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Rozważasz sprzedaż, aby pozyskać środki na wzmocnienie drużyny.</button>
+</div>
+
+<!-- Część 6: "Błysk Geniuszu" -->
+<div id="part6A" class="game-section">
+    <p>Twój wybór taktyki wpływa na atmosferę w klubie, a wyniki zaczynają przyciągać uwagę mediów. Jak potoczą się kolejne wydarzenia?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz6.png.png" alt="cz6.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Kontynuujesz konsekwentną taktykę, nie dając się zdekoncentrować pochwałami.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Drużyna utrzymuje formę, a kibice zaczynają uznawać cię za geniusza. W miarę jak sezon trwa, pytanie brzmi, czy uda ci się utrzymać tę doskonałą passę?</button>
+</div>
+
+<!-- Część 7: "Problem z Kontuzją Gwiazdy" -->
+<div id="part7A" class="game-section">
+    <p>W trakcie jednego z meczów dochodzi do kontuzji jednego z twoich najważniejszych zawodników. To poważny cios dla drużyny. Jak reagujesz?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz7.png.png" alt="cz7.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Decydujesz się na intensywne leczenie i rehabilitację, nie rezygnując z zawodnika na dłuższą metę.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Delegujesz asystenta do znalezienia zastępstwa na rynku transferowym.</button>
+</div>
+
+<!-- Część 8: "Podjąłeś Decyzję Transferową" -->
+<div id="part8A" class="game-section">
+    <p>Twoja decyzja w sprawie kontuzji ma wpływ na morale zespołu. Teraz, gdy zbliża się kluczowy mecz, musisz zmierzyć się z konsekwencjami.</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz8.png.png" alt="cz8.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Zawodnik wraca do pełnej formy, wzmacniając zespół na decydującą fazę sezonu.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Twój zawodnik wraca silniejszy niż kiedykolwiek, a drużyna jest gotowa na ostatnie wyzwanie. Czy to wystarczy do zdobycia Ligi Mistrzów?</button>
+</div>
+
+<!-- Część 9: "Kluczowy Mecz w Lidze Mistrzów" -->
+<div id="part9A" class="game-section">
+    <p>Przed tobą kluczowy mecz w Lidze Mistrzów. Twój zespół jest gotowy, ale musisz podjąć decyzję dotyczącą taktyki.</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz9.png.png" alt="cz9.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Postawisz na agresywną grę, starając się zdominować rywala od początku.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Zastosujesz bardziej zrównoważoną taktykę, skupiając się na kontroli środka boiska.</button>
+</div>
+
+<!-- Część 10: "Triumf czy Porażka" -->
+<div id="part10A" class="game-section">
+    <p>Twój wybór taktyki w decydującym meczu Ligi Mistrzów ma ogromne znaczenie. Jak to wszystko się kończy?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz10.png.png" alt="cz10.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Agresywna taktyka przynosi efekty, a Barcelona odnosi zwycięstwo, zapewniając sobie awans do kolejnej rundy.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Drużyna prezentuje spektakularną grę, a ty zostajesz bohaterem. To chwila triumfu i kibice świętują na ulicach Barcelony.</button>
+</div>
+
+<!-- Część 11: "Dogrywka i Decyzje" -->
+<div id="part11A" class="game-section">
+    <p>Jesteś w dogrywce, a presja rośnie. Musisz podjąć kluczowe decyzje, które mogą zadecydować o wyniku meczu.</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz11.png.png" alt="cz11.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Kontynuujesz atakującą grę, licząc na zdobycie bramki przed końcem dogrywki.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Zmieniasz taktykę na defensywną, starając się unikać błędów, które mogą przysporzyć kłopotów.</button>
+</div>
+
+<!-- Część 12: "Dramatyczna Decyzja" -->
+<div id="part12A" class="game-section">
+    <p>Niezależnie od wyboru, decyzja ta przynosi skrajnie różne rezultaty.</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz12.png.png" alt="cz12.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Twoja drużyna zdobywa decydującą bramkę, zapewniając awans do kolejnej rundy.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Sukces w dogrywce pozwala Barcelonie zachować nadzieję na zdobycie Ligi Mistrzów. Kibice i zarząd klubu cieszą się z wyniku.</button>
+</div>
+
+<!-- Część 13: "Reakcja Kibiców i Właścicieli Klubu" -->
+<div id="part13A" class="game-section">
+    <p>Twój sukces nie pozostaje niezauważony. Jak reagują kibice i właściciele klubu?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz13.png.png" alt="cz13.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Kibice obchodzą sukces na ulicach Barcelony, a zarząd klubu docenia twoje umiejętności trenerskie.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Odbierasz wsparcie zarządu, a kibice cieszą się z sukcesu. Barcelona ma przed sobą jasną przyszłość.</button>
+</div>
+
+<!-- Część 14: "Rozwój Wydarzeń po Lidze Mistrzów" -->
+<div id="part14A" class="game-section">
+    <p>Zdajesz sobie sprawę, że niezależnie od wyniku w Lidze Mistrzów, sezon dopiero co się zaczyna. Musisz zdecydować, jak skupić się na reszcie rozgrywek.</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz14.png.png" alt="cz14.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Koncentrujesz się na lokalnych rozgrywkach, starając się zdobyć tytuł ligowy.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Inwestujesz więcej czasu w rozwój młodych talentów, planując długofalowy sukces.</button>
+</div>
+
+<!-- Część 15: "Finał Sezonu" -->
+<div id="part15A" class="game-section">
+    <p>Sezon dobiega końca, a ty masz ostatnią szansę na osiągnięcie celu - wygranie Ligi Mistrzów. Jaką strategię wybierasz w finale?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz15.png.png" alt="c15.png">
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Zmieniasz taktykę, zaskakując przeciwnika i dążąc do triumfu.</button>
+    <button onclick="makeChoice('part2B', 'part2A', this)" class="selected">Kontynuujesz dotychczasową taktykę, ufając, że jesteś na właściwej drodze.</button>
+</div>
+
+<!-- Część 16: "Zakończenie Sezonu" -->
+<div id="part16A" class="game-section">
+    <p>Ostateczna rozgrywka sezonu. Jak się kończy Twoja historia?</p>
+    <img src="C:\Users\barto\Desktop\Gra-AI\cz16.png.png" alt="cz16.png">
+    <button onclick="alert('Gratulacje! Wygrałeś Ligę Mistrzów z FC Barceloną. Jesteś bohaterem kibiców i zyskujesz sławę jako znakomity trener.');">Zwycięska scena zakończeniowa</button>
+    <button onclick="alert('Niestety, przegrałeś finał Ligi Mistrzów. Mimo to zarząd klubu docenia Twoje starania, dając Ci szansę na odbudowę przed kolejnym sezonem.');">Scena zakończenia po porażce</button>
+</div>
+
+<!-- Skrypt JavaScript -->
+<script>
+   function makeChoice(nextPartA, nextPartB, button) {
+    let userChoice = confirm("Czy na pewno chcesz dokonać tego wyboru?");
+
+    if (userChoice) {
+        scrollToSection(nextPartA, button);
+    } else {
+        scrollToSection(nextPartB, button);
+    }
+}
+
+function scrollToSection(sectionId, button) {
+    
+    let allButtonsInSection = button.parentElement.querySelectorAll('button');
+    allButtonsInSection.forEach(btn => btn.classList.remove('selected'));
+
+   
+    button.classList.add('selected');
+
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
+</script>
+
+</body>
+</html>
